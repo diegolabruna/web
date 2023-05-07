@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji que se mueve</title>
     <style>
         body {
             display: flex;
@@ -16,10 +17,35 @@
         a {
             text-decoration: none;
             color: #000;
+            position: fixed;
+            transition: top 0.5s, left 0.5s;
         }
     </style>
 </head>
 <body>
-    <a href="https://www.linkedin.com/in/dieg0l/" target="_blank" rel="noopener noreferrer">🤨</a>
+    <a href="https://www.linkedin.com/in/dieg0l/" target="_blank" rel="noopener noreferrer" id="emoticon">🤨</a>
+    <script>
+        const emoticon = document.getElementById('emoticon');
+        const distanceThreshold = 300;
+
+        function moveEmoticon(e) {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            const rect = emoticon.getBoundingClientRect();
+            const emoticonCenterX = rect.left + rect.width / 2;
+            const emoticonCenterY = rect.top + rect.height / 2;
+            const distance = Math.sqrt(Math.pow(mouseX - emoticonCenterX, 2) + Math.pow(mouseY - emoticonCenterY, 2));
+
+            if (distance < distanceThreshold) {
+                const newLeft = emoticon.offsetLeft + (emoticonCenterX - mouseX) * 0.5;
+                const newTop = emoticon.offsetTop + (emoticonCenterY - mouseY) * 0.5;
+
+                emoticon.style.left = `${newLeft}px`;
+                emoticon.style.top = `${newTop}px`;
+            }
+        }
+
+        document.body.addEventListener('mousemove', moveEmoticon);
+    </script>
 </body>
 </html>
