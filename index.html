@@ -1,60 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPEFJH60MP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EPEFJH60MP');
-</script>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>labruna.net</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-size: 3rem;
-            background-color: #f0f0f0;
-        }
-        a {
-            text-decoration: none;
-            color: #000;
-            position: fixed;
-            transition: top 0.5s, left 0.5s;
-        }
-    </style>
+    <title>Diego Labruna</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Añade el enlace a Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="https://www.linkedin.com/in/dieg0l/" target="_blank" rel="noopener noreferrer" id="emoticon">🤨</a>
-    <script>
-        const emoticon = document.getElementById('emoticon');
-        const distanceThreshold = 300;
-
-        function moveEmoticon(e) {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            const rect = emoticon.getBoundingClientRect();
-            const emoticonCenterX = rect.left + rect.width / 2;
-            const emoticonCenterY = rect.top + rect.height / 2;
-            const distance = Math.sqrt(Math.pow(mouseX - emoticonCenterX, 2) + Math.pow(mouseY - emoticonCenterY, 2));
-
-            if (distance < distanceThreshold) {
-                const newLeft = emoticon.offsetLeft + (emoticonCenterX - mouseX) * 0.5;
-                const newTop = emoticon.offsetTop + (emoticonCenterY - mouseY) * 0.5;
-
-                emoticon.style.left = `${newLeft}px`;
-                emoticon.style.top = `${newTop}px`;
-            }
-        }
-
-        document.body.addEventListener('mousemove', moveEmoticon);
-    </script>
+    <canvas id="starfield"></canvas>
+    <div class="content">
+        <h1>DIEGO LABRUNA <span id="role"></span></h1>
+        <div class="links">
+            <p><a href="https://www.linkedin.com/in/dieg0l" target="_blank">LinkedIn</a> | <a href="mailto:diego@labruna.net">diego@labruna.net</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
