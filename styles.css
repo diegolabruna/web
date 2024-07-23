@@ -27,7 +27,7 @@ body, html {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     margin: 0;
 }
 
@@ -47,4 +47,32 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Media queries para hacerlo responsive */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 0.8em;
+    }
 }
