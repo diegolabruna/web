@@ -8,18 +8,18 @@ function typeRole() {
     if (charIndex < roles[index].length) {
         roleElement.textContent += roles[index].charAt(charIndex);
         charIndex++;
-        setTimeout(typeRole, 100); // Intervalo de escritura más rápido
+        setTimeout(typeRole, 100);
     } else {
         setTimeout(() => {
             roleElement.textContent = '';
             charIndex = 0;
             index = (index + 1) % roles.length;
             typeRole();
-        }, 1000); // Intervalo de alternancia más rápido
+        }, 1000);
     }
 }
 
-setTimeout(typeRole, 1000); // Primer intervalo más rápido
+setTimeout(typeRole, 1000);
 
 const canvas = document.getElementById('starfield');
 const ctx = canvas.getContext('2d');

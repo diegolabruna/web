@@ -41,7 +41,7 @@ p {
 }
 
 a {
-    color: white; /* Cambia el color de los enlaces a blanco */
+    color: white;
     text-decoration: none;
 }
 
@@ -49,7 +49,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Media queries para hacerlo responsive */
 @media (max-width: 1200px) {
     h1 {
         font-size: 3em;
@@ -61,18 +60,18 @@ a:hover {
 
 @media (max-width: 800px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     p {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 }
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
     p {
-        font-size: 0.8em;
+        font-size: 1.2em;
     }
 }
