@@ -1,4 +1,4 @@
-const roles = ['DevOps', 'SysAdmin'];
+const roles = ['DevOps', 'SysAdmin', 'SRE'];
 let index = 0;
 let charIndex = 0;
 
